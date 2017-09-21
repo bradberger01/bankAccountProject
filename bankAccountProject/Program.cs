@@ -10,7 +10,16 @@ namespace bankAccountProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test");
+            Client brad = new Client();
+
+            brad.MainMenu();
+
+            int menuNumber = int.Parse(Console.ReadLine());
+
+
+
+
+            //brad.PrintClientInfo();
         }
     }
 }
