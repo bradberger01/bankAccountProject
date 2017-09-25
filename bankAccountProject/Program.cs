@@ -11,7 +11,7 @@ namespace bankAccountProject
         static void Main(string[] args)
         {
             Client brad = new Client();
-            Account bradBerger0 = new Account();
+            //Account bradBerger0 = new Account();
             Checking bradBerger1 = new Checking();
             Savings bradBerger2 = new Savings();
 

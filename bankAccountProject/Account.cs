@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bankAccountProject
 {
-    class Account //BASE CLASS
+    abstract class Account //BASE CLASS
     {
         //FIELDS
         protected int accountNumber;
@@ -50,11 +50,8 @@ namespace bankAccountProject
             Console.WriteLine(this.accountType);
             Console.WriteLine(this.balance);
         }
-        public virtual void Deposit() //DEPOSIT METHOD
-        {
-            Console.WriteLine(this.balance);
-
-        }
+        public abstract void Deposit(); //DEPOSIT METHOD
+       
         public virtual void Withdrawl() //WITHDRAWL METHOD
         {
             Console.WriteLine(this.balance);
