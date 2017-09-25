@@ -8,12 +8,13 @@ namespace bankAccountProject
 {
     class Client
     {
+        //FIELDS
         private string userName;
         private int checkingAccountNum;
         private int savingsAccountNum;
         private int selectAccountType;
-        //private int menuNumber;
-
+    
+        //PROPERTIES
         public string UserName
         {
             get { return this.userName; }
@@ -34,13 +35,9 @@ namespace bankAccountProject
             get { return this.selectAccountType; }
             set { this.selectAccountType = value; }
         }
-        //public int MenuNumber
-        //{
-        //    get { return this.menuNumber; }
-        //    set { this.menuNumber = value; }
-        //}
-
-        public Client()
+      
+        //CONSTRUCTORS
+        public Client() //DEFAULT
         {
             this.userName = "Brad Berger";
             this.checkingAccountNum = 123456789;
@@ -53,7 +50,7 @@ namespace bankAccountProject
             Console.WriteLine("Checking Account Number: " + checkingAccountNum);
             Console.WriteLine("Savings Account Number: " + savingsAccountNum);
         }
-        public void MainMenu()
+        public void MainMenu() //CW MAIN MENU METHOD
         {
             Console.WriteLine(" ");
             Console.WriteLine("Please select from the menu below.");
@@ -66,7 +63,7 @@ namespace bankAccountProject
             Console.WriteLine(" ");
 
         }
-        public void SelectAccount()
+        public void SelectAccount() //SELECT SPECIFIC ACCOUNT METHOD
         {
             Console.WriteLine("Which account would you like to view?");
             Console.WriteLine("1. Checking");

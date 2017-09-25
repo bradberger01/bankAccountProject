@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace bankAccountProject
 {
-    class Account
+    class Account //BASE CLASS
     {
+        //FIELDS
         protected int accountNumber;
         protected double balance;
         protected string accountType;
         
-        
-
-
-
+        //PROPERTIES
         public int AccountNumber
         {
             get { return this.accountNumber; }
@@ -32,10 +30,8 @@ namespace bankAccountProject
             set { this.accountType = value; }
         }
         
-       
-
-
-        public Account()
+        //CONSTRUCTORS
+        public Account()//DEFAULT
         {
             this.accountType = "Checking";
             this.accountNumber = 234567891;
@@ -48,18 +44,18 @@ namespace bankAccountProject
             this.balance = balance;
         }
 
-        public virtual void ViewBalance()
+        public virtual void ViewBalance() //VIEW BALANCE METHOD
         {
             Console.WriteLine(this.accountNumber);
             Console.WriteLine(this.accountType);
             Console.WriteLine(this.balance);
         }
-        public virtual void Deposit()
+        public virtual void Deposit() //DEPOSIT METHOD
         {
             Console.WriteLine(this.balance);
 
         }
-        public virtual void Withdrawl()
+        public virtual void Withdrawl() //WITHDRAWL METHOD
         {
             Console.WriteLine(this.balance);
         }

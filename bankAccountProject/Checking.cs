@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace bankAccountProject
 {
-    class Checking:Account
+    class Checking:Account //DERIVATIVE 
     {
+        //FIELDS
         protected double addAmount;
         protected double subtractAmount;
 
+        //PROPERTIES
         public double AddAmount
         {
             get { return this.addAmount; }
@@ -22,7 +24,8 @@ namespace bankAccountProject
             set { this.subtractAmount = value; }
         }
 
-        public Checking()
+        //CONSTRUCTORS
+        public Checking() //DEFAULT
         {
             this.accountType = "Checking";
             this.accountNumber = 123456789;
@@ -35,20 +38,20 @@ namespace bankAccountProject
             this.balance = balance;
         }
 
-        public override void ViewBalance()
+        public override void ViewBalance() //VIEW BALANCE OVERRIDE METHOD
         {
             Console.WriteLine(this.accountNumber);
             Console.WriteLine(this.accountType);
             Console.WriteLine(this.balance);
         }
-        public override void Deposit()
+        public override void Deposit() //DEPOSIT OVERRIDE METHOD
         {
             balance = balance + addAmount;
             Console.WriteLine("$" + addAmount + " has been added to Checking");
             Console.WriteLine("$" + balance + " is your new total");
 
         }
-        public override void Withdrawl()
+        public override void Withdrawl() //WITHDRAWL OVERRIDE METHOD
         {
             balance = balance - subtractAmount;
             Console.WriteLine("$" + subtractAmount +" has been deduced from Checking");

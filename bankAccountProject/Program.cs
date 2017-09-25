@@ -24,14 +24,14 @@ namespace bankAccountProject
                 if (menuNumber == 1)
                 {
                     brad.PrintClientInfo();
-                    //brad.MainMenu();
-                    //menuNumber = int.Parse(Console.ReadLine());
                 }
                 else if (menuNumber == 2)
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("Which account would you like to view?");
                     Console.WriteLine("a. Checking");
                     Console.WriteLine("b. Savings");
+                    Console.WriteLine(" ");
 
                     char checkingOrSavings = char.Parse(Console.ReadLine());
                     if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
@@ -49,13 +49,16 @@ namespace bankAccountProject
                 }
                 else if (menuNumber == 3)
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("Which account would you like deposit to?");
                     Console.WriteLine("a. Checking");
                     Console.WriteLine("b. Savings");
+                    Console.WriteLine(" ");
 
                     char checkingOrSavings = char.Parse(Console.ReadLine());
                     if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine("Enter amount to be deposited to checking");
                         bradBerger1.AddAmount = double.Parse(Console.ReadLine());
                         bradBerger1.Deposit();
@@ -65,6 +68,7 @@ namespace bankAccountProject
                     }
                     else if (checkingOrSavings == 'b' || checkingOrSavings == 'b')
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine("Enter amount to be deposited to Savings");
                         bradBerger2.AddAmount = double.Parse(Console.ReadLine());
                         bradBerger2.Deposit();
@@ -74,13 +78,16 @@ namespace bankAccountProject
                 }
                 else if (menuNumber == 4)
                 {
+                    Console.WriteLine(" ");
                     Console.WriteLine("Which account would you like withdraw from?");
                     Console.WriteLine("a. Checking");
                     Console.WriteLine("b. Savings");
+                    Console.WriteLine(" ");
 
                     char checkingOrSavings = char.Parse(Console.ReadLine());
                     if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine("Enter amount to be withdrawn from Checking");
                         bradBerger1.SubtractAmount = double.Parse(Console.ReadLine());
                         bradBerger1.Withdrawl();
@@ -89,15 +96,18 @@ namespace bankAccountProject
                     }
                     else if (checkingOrSavings == 'b' || checkingOrSavings == 'b')
                     {
+                        Console.WriteLine(" ");
                         Console.WriteLine("Enter amount to be withdrawon from Savings");
                         bradBerger2.SubtractAmount = double.Parse(Console.ReadLine());
-                        if (bradBerger2.Balance >= 200)
+                        if (bradBerger2.Balance - bradBerger2.SubtractAmount < 200)
                         {
-                            bradBerger2.Withdrawl();
+                            Console.WriteLine("You can not withdraw due to minimum balance requirements");
+                         
                         }
                         else
                         {
-                            Console.WriteLine("You can not withdraw due to minimum balance requirements");
+                            bradBerger2.Withdrawl();
+                           
                         }
                     }
                 }
@@ -106,7 +116,7 @@ namespace bankAccountProject
                     Console.WriteLine("Thank you for using the ATM. Good-bye!");
                     break;
                 }
-                //Console.WriteLine("Thank you for using the ATM. Good-bye!");
+                
             }
         }
     }
