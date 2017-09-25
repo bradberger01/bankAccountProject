@@ -8,10 +8,12 @@ namespace bankAccountProject
 {
     class Account
     {
-        private int accountNumber;
-        private double balance;
-        private string accountType;
-     
+        protected int accountNumber;
+        protected double balance;
+        protected string accountType;
+        
+        
+
 
 
         public int AccountNumber
@@ -29,11 +31,15 @@ namespace bankAccountProject
             get { return this.accountType; }
             set { this.accountType = value; }
         }
+        
        
+
 
         public Account()
         {
-
+            this.accountType = "Checking";
+            this.accountNumber = 234567891;
+            this.balance = 5000.00d;
         }
         public Account(string accountType, int accountNumber, double balance)
         {
@@ -44,16 +50,20 @@ namespace bankAccountProject
 
         public virtual void ViewBalance()
         {
-            Console.WriteLine(balance);
+            Console.WriteLine(this.accountNumber);
+            Console.WriteLine(this.accountType);
+            Console.WriteLine(this.balance);
         }
         public virtual void Deposit()
         {
-            Console.WriteLine("Which account would you like to make a deposit to?");
+            Console.WriteLine(this.balance);
+
         }
         public virtual void Withdrawl()
         {
-            Console.WriteLine("Which account would you like to make a withdrawl from?");
+            Console.WriteLine(this.balance);
         }
+        
 
     }
 }

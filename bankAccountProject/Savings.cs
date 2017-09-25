@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bankAccountProject
 {
-    class Checking:Account
+    class Savings : Account
     {
         protected double addAmount;
         protected double subtractAmount;
@@ -21,14 +21,13 @@ namespace bankAccountProject
             get { return this.subtractAmount; }
             set { this.subtractAmount = value; }
         }
-
-        public Checking()
+        public Savings()
         {
-            this.accountType = "Checking";
-            this.accountNumber = 123456789;
+            this.accountType = "Savings";
+            this.accountNumber = 987654321;
             this.balance = 5000.00;
         }
-        public Checking (string accountType, int accountNumber, double balance)
+        public Savings(string accountType, int accountNumber, double balance)
         {
             this.accountType = accountType;
             this.accountNumber = accountNumber;
@@ -44,14 +43,14 @@ namespace bankAccountProject
         public override void Deposit()
         {
             balance = balance + addAmount;
-            Console.WriteLine("$" + addAmount + " has been added to Checking");
+            Console.WriteLine("$" + addAmount + " has been added to Savings");
             Console.WriteLine("$" + balance + " is your new total");
 
         }
         public override void Withdrawl()
         {
             balance = balance - subtractAmount;
-            Console.WriteLine("$" + subtractAmount +" has been deduced from Checking");
+            Console.WriteLine("$" + subtractAmount + " has been deduced from Savings");
             Console.WriteLine("$" + balance + " is your new total");
         }
 

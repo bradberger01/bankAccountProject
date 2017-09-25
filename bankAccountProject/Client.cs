@@ -11,6 +11,8 @@ namespace bankAccountProject
         private string userName;
         private int checkingAccountNum;
         private int savingsAccountNum;
+        private int selectAccountType;
+        //private int menuNumber;
 
         public string UserName
         {
@@ -21,14 +23,24 @@ namespace bankAccountProject
         {
             get { return this.checkingAccountNum; }
             set { this.checkingAccountNum = value; }
-        }
+        } 
         public int SavingsAccountNum
         {
             get { return this.savingsAccountNum; }
             set { this.savingsAccountNum = value; }
         }
+        public int SelectAccountType
+        {
+            get { return this.selectAccountType; }
+            set { this.selectAccountType = value; }
+        }
+        //public int MenuNumber
+        //{
+        //    get { return this.menuNumber; }
+        //    set { this.menuNumber = value; }
+        //}
 
-       public Client()
+        public Client()
         {
             this.userName = "Brad Berger";
             this.checkingAccountNum = 123456789;
@@ -43,6 +55,7 @@ namespace bankAccountProject
         }
         public void MainMenu()
         {
+            Console.WriteLine(" ");
             Console.WriteLine("Please select from the menu below.");
             Console.WriteLine(" ");
             Console.WriteLine("1. View client information");
@@ -50,6 +63,14 @@ namespace bankAccountProject
             Console.WriteLine("3. Make a deposit");
             Console.WriteLine("4. Make a withdrawl");
             Console.WriteLine("5. Exit");
+            Console.WriteLine(" ");
+
+        }
+        public void SelectAccount()
+        {
+            Console.WriteLine("Which account would you like to view?");
+            Console.WriteLine("1. Checking");
+            Console.WriteLine("2. Savings");
         }
 
     }

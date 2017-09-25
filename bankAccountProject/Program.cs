@@ -11,15 +11,115 @@ namespace bankAccountProject
         static void Main(string[] args)
         {
             Client brad = new Client();
+            Account bradBerger0 = new Account();
+            Checking bradBerger1 = new Checking();
+            Savings bradBerger2 = new Savings();
 
-            brad.MainMenu();
+            int menuNumber = 1;
+            while (menuNumber != 5)
+            {
+                brad.MainMenu();
+                menuNumber = int.Parse(Console.ReadLine());
 
-            int menuNumber = int.Parse(Console.ReadLine());
+                if (menuNumber == 1)
+                {
+                    brad.PrintClientInfo();
+                    //brad.MainMenu();
+                    //menuNumber = int.Parse(Console.ReadLine());
+                }
+                else if (menuNumber == 2)
+                {
+                    Console.WriteLine("Which account would you like to view?");
+                    Console.WriteLine("a. Checking");
+                    Console.WriteLine("b. Savings");
+
+                    char checkingOrSavings = char.Parse(Console.ReadLine());
+                    if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
+                    {
+                        bradBerger1.ViewBalance();
+                        //brad.MainMenu();
+                        //menuNumber = int.Parse(Console.ReadLine());
+                    }
+                    else if (checkingOrSavings == 'b' || checkingOrSavings == 'b')
+                    {
+                        bradBerger2.ViewBalance();
+                        //brad.MainMenu();
+                        //menuNumber = int.Parse(Console.ReadLine());
+                    }
+                }
+                else if (menuNumber == 3)
+                {
+                    Console.WriteLine("Which account would you like deposit to?");
+                    Console.WriteLine("a. Checking");
+                    Console.WriteLine("b. Savings");
+
+                    char checkingOrSavings = char.Parse(Console.ReadLine());
+                    if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
+                    {
+                        Console.WriteLine("Enter amount to be deposited to checking");
+                        bradBerger1.AddAmount = double.Parse(Console.ReadLine());
+                        bradBerger1.Deposit();
+
+                        //brad.MainMenu();
+                        //menuNumber = int.Parse(Console.ReadLine());
+                    }
+                    else if (checkingOrSavings == 'b' || checkingOrSavings == 'b')
+                    {
+                        Console.WriteLine("Enter amount to be deposited to Savings");
+                        bradBerger2.AddAmount = double.Parse(Console.ReadLine());
+                        bradBerger2.Deposit();
+                        //brad.MainMenu();
+                        //menuNumber = int.Parse(Console.ReadLine());
+                    }
+                }
+                else if (menuNumber == 4)
+                {
+                    Console.WriteLine("Which account would you like withdraw from?");
+                    Console.WriteLine("a. Checking");
+                    Console.WriteLine("b. Savings");
+
+                    char checkingOrSavings = char.Parse(Console.ReadLine());
+                    if (checkingOrSavings == 'a' || checkingOrSavings == 'A')
+                    {
+                        Console.WriteLine("Enter amount to be withdrawn from Checking");
+                        bradBerger1.SubtractAmount = double.Parse(Console.ReadLine());
+                        bradBerger1.Withdrawl();
+                        //brad.MainMenu();
+                        //menuNumber = int.Parse(Console.ReadLine());
+                    }
+                    else if (checkingOrSavings == 'b' || checkingOrSavings == 'b')
+                    {
+                        Console.WriteLine("Enter amount to be withdrawon from Savings");
+                        bradBerger2.SubtractAmount = double.Parse(Console.ReadLine());
+                        if (bradBerger2.Balance >= 200)
+                        {
+                            bradBerger2.Withdrawl();
+                        }
+                        else
+                        {
+                            Console.WriteLine("You can not withdraw due to minimum balance requirements");
+                        }
+                    }
+                }
+                else if (menuNumber ==5)
+                {
+                    Console.WriteLine("Thank you for using the ATM. Good-bye!");
+                    break;
+                }
+                //Console.WriteLine("Thank you for using the ATM. Good-bye!");
+            }
+        }
+    }
+}
+            
+           
+           
+        
 
 
 
 
             //brad.PrintClientInfo();
-        }
-    }
-}
+        
+    
+
